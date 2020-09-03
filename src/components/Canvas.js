@@ -36,18 +36,13 @@ function Canvas() {
   };
 
   const handleImage = (e) => {
-    var objects = canvas.getObjects();
-    for (var i in objects) {
-      objects[i].remove();
-    }
+
     const reader = new FileReader();
     reader.onload = function (event) {
       var img = new Image();
       img.onload = function () {
         const imgInstance = new fabric.Image(img, {
           selectable: 1,
-          height: 200,
-          width: 200,
         });
         imgInstance.scaleToHeight(300);
         imgInstance.scaleToWidth(300);
